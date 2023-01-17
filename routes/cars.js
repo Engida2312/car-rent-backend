@@ -6,5 +6,13 @@ router.get('/', (req, res, next )=>{
 })
 
 
+router.post('/', (req, res, next )=>{
+    res.send('post car detail')
+})
+
+
+router.get('/:id', (req, res, next )=>{
+    res.send('single car detail')
+})
 
 module.exports = router

@@ -1,0 +1,6 @@
+
+http://localhost:3000/cars
+Content-Type: application/json
+{
+    "color": "eni292",
+}

@@ -12,7 +12,7 @@ const CarsSchema = new Schema(
         required: true 
     },
     vehicle_number: {
-        type: Number,
+        type: String,
         required: true 
     },
     max_seat: {

@@ -61,8 +61,8 @@ router.patch('/:id', async(req, res, next )=>{
     }catch(err){
         console.log(err.message)
     }
-})
-
+})  
+ 
 // get a single car
 router.delete('/:id', async(req, res, next )=>{
     const id = req.params.id

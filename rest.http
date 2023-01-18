@@ -1,6 +1,50 @@
 
-http://localhost:3000/cars
+### post a car
+POST http://localhost:3000/
 Content-Type: application/json
+
 {
-    "color": "eni292",
+    "modal": "BMW Civic",
+    "description": "lorem car",
+    "vehicle_number": 282829,
+    "max_seat": 12,
+    "color": "red",
+    "rent_per_day": 500
+}  
+
+
+### find all cars
+GET http://localhost:3000/
+
+
+### find single car by model
+GET http://localhost:3000/BMW Civic
+ 
+
+### Update a single car
+PATCH   http://localhost:3000/63c77b1ae3516500c66e7c88
+Content-Type: application/json
+
+{
+    "rent_per_day": 9.99
+}  
+
+
+### delete a single car
+DELETE  http://localhost:3000/63c770a0326b49e363f9525f
+
+
+### find all bookings
+POST http://localhost:3000/booking/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "contact":"555-555-5555",
+    "issue_date": "2023-01-17",
+    "return_date": "2023-02-19",
+    "modal": "BMW Civic"
 }
+
+
+

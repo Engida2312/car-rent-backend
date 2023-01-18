@@ -1,3 +1,4 @@
+const bodyParser = require("body-parser");
 const express = require("express")
 const app = express();
 const mongoose = require('mongoose')
@@ -8,13 +9,17 @@ mongoose.connect(
     console.log("db connected")
 })
 
-app.get('/', (req, res, next)=>{
-    res.send("home")
-})
+// parse application/json
+app.use(bodyParser.json());
+       
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const CarsRouter = require('./routes/cars_routes')
-
-app.use('/cars', CarsRouter)
+const BookingRouter = require('./routes/bookings_router')
+ 
+app.use('/', CarsRouter)
+app.use('/booking', BookingRouter)
 
 app.use((req, res, next)=>{
     const err =new Error('Nor found')

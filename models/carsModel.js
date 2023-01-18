@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const CarsSchema = new Schema({
+const CarsSchema = new Schema(
+{
     modal: {
         type: String,
         required: true 
@@ -25,8 +26,9 @@ const CarsSchema = new Schema({
     rent_per_day: {
         type: Number,
         required: true 
-    },
-})
+    }
+}
+)
 
 const Cars = mongoose.model('Cars', CarsSchema)
 module.exports = Cars

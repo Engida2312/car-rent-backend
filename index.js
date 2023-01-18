@@ -3,9 +3,10 @@ const express = require("express")
 const app = express();
 const mongoose = require('mongoose')
 const createError = require('http-errors')
+const dontenv = require('dotenv').config()
 
 mongoose.connect(
-    'mongodb+srv://engida:3CRnTMFqEfivRdXy@cluster0.smbsb.mongodb.net/carRent_api'
+    process.env.MONGODB_URI
 ).then(()=>{
     console.log("db connected")
 })
@@ -40,7 +41,7 @@ app.use((err, req, res, next)=>{
     })
 })
 
-
-app.listen(3000, ()=>{
-    console.log("server running on port 3000")
+const PORT = process.env.PORT|3000
+app.listen(PORT, ()=>{
+    console.log("server running on port "+ PORT + "...")
 })

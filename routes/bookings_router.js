@@ -1,24 +1,8 @@
 const express = require("express")
 const router = express.Router()
-
-const Bookings = require('../models/bookingModel')
-
+const BookingController = require('../controllers/bookingControllers')
 
 // store booking 
-router.post('/register', async(req, res, next )=>{
-    try{
-        const Booking = new Bookings(req.body)
-        Booking.save()  
-            .then((result)=>{
-                res.send(result)
-            }) 
-            .catch((err)=>{
-                console.log(err.message)
-            })
-    }catch(err){
-        console.log(err.message)
-    }
-})
-
+router.post('/register', BookingController.storeBooking)
 
 module.exports = router

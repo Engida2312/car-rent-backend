@@ -1,6 +1,6 @@
 
 ### post a car
-POST http://localhost:3000/
+POST http://localhost:3000/list
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 DELETE  http://localhost:3000/63c770a0326b49e363f9525f
 
 
-### find all bookings
+### add bookings
 POST http://localhost:3000/booking/register
 Content-Type: application/json
 

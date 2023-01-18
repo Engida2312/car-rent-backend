@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express")
 const app = express();
 const mongoose = require('mongoose')
+const createError = require('http-errors')
 
 mongoose.connect(
     'mongodb+srv://engida:3CRnTMFqEfivRdXy@cluster0.smbsb.mongodb.net/carRent_api'
@@ -22,9 +23,10 @@ app.use('/', CarsRouter)
 app.use('/booking', BookingRouter)
 
 app.use((req, res, next)=>{
-    const err =new Error('Nor found')
-    err.status = 404;
-    next(err)
+    // const err =new Error('Nor found')
+    // err.status = 404;
+    // next(err)
+    next(createError(404, 'Not found'));
 })
 
 // error handler

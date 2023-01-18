@@ -5,11 +5,7 @@ const mongoose = require('mongoose')
 const createError = require('http-errors')
 const dontenv = require('dotenv').config()
 
-mongoose.connect(
-    process.env.MONGODB_URI
-).then(()=>{
-    console.log("db connected")
-})
+
 
 // parse application/json
 app.use(bodyParser.json());
@@ -42,6 +38,12 @@ app.use((err, req, res, next)=>{
 })
 
 const PORT = process.env.PORT|3000
-app.listen(PORT, ()=>{
-    console.log("server running on port "+ PORT + "...")
+mongoose.connect(
+    process.env.MONGODB_URI
+).then(()=>{
+    app.listen(PORT, ()=>{
+        console.log("server running on port "+ PORT + "...")
+    })
+    console.log("db connected")
 })
+

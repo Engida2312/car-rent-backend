@@ -5,7 +5,7 @@ const Cars = require('../models/carsModel')
 const Bookings = require('../models/bookingModel')
 
 // save a car
-router.post('/', (req, res, next )=>{
+router.post('/list', (req, res, next )=>{
     const car = new Cars(req.body)
     car.save()  
         .then((result)=>{

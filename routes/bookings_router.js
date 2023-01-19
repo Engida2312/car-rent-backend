@@ -6,3 +6,4 @@ const BookingController = require('../controllers/bookingControllers')
 router.post('/register', BookingController.storeBooking)
 
 module.exports = router
+ 

@@ -22,7 +22,7 @@ const BookingsSchema = new Schema(
     modal: {
         type: String, 
         ref: 'Cars',
-        required: true 
+        required: false 
     },  
     
 }

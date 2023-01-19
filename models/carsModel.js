@@ -26,6 +26,10 @@ const CarsSchema = new Schema(
     rent_per_day: {
         type: Number,
         required: true 
+    },
+    image: {
+        type: String,
+        required: true 
     }
 }
 )

@@ -13,7 +13,7 @@ module.exports = {
             console.log(err.message)
         }
     },
-
+ 
     listCar: (req, res, next )=>{
         const car = new Cars(req.body)
         car.save()  

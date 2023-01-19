@@ -5,6 +5,9 @@ const mongoose = require('mongoose')
 const createError = require('http-errors')
 const dontenv = require('dotenv').config()
 
+const cors = require('cors')
+app.use(cors())
+
 
 
 // parse application/json
